@@ -1,0 +1,755 @@
+
+/* =====================================
+   IDENTIDADE VISUAL
+===================================== */
+
+:root {
+    --green: #65796a;
+    --green-dark: #405447;
+    --sage: #e5ebe2;
+    --cream: #f8f6f0;
+    --white: #ffffff;
+    --text: #343b35;
+    --muted: #777e76;
+    --border: #e8e7df;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+.container {
+    width: min(1160px, 90%);
+    margin: 0 auto;
+}
+
+.eyebrow {
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+.header {
+    width: 100%;
+    height: 92px;
+    background: rgba(248, 246, 240, 0.97);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    color: var(--green-dark);
+}
+
+.logo-subtitle {
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: var(--muted);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.navigation a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: var(--green);
+}
+
+.header-button {
+    background: var(--green);
+    color: white;
+    padding: 14px 23px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.header-button:hover,
+.primary-button:hover {
+    background: var(--green-dark);
+    transform: translateY(-2px);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+
+/* =====================================
+   PÁGINA INICIAL
+===================================== */
+
+.hero {
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: center;
+    gap: 50px;
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: clamp(45px, 5.2vw, 69px);
+    line-height: 1.13;
+    margin-top: 25px;
+    color: var(--green-dark);
+}
+
+.hero h1 span {
+    display: block;
+    font-style: italic;
+    color: var(--green);
+}
+
+.hero-text > p {
+    max-width: 470px;
+    margin-top: 24px;
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.primary-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    padding: 17px 23px;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.secondary-button {
+    color: var(--green-dark);
+    font-size: 12px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--green);
+    padding-bottom: 5px;
+}
+
+.hero-note {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.note-icon {
+    color: var(--green);
+    font-size: 22px;
+}
+
+
+/* =====================================
+   FOTO DA DOUTORA
+===================================== */
+
+.hero-visual {
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.visual-circle {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: var(--sage);
+    position: absolute;
+}
+
+.doctor-photo-card {
+    position: relative;
+    z-index: 2;
+    width: 330px;
+    height: 420px;
+    overflow: hidden;
+    border-radius: 170px 170px 12px 12px;
+    background: #e5ebe2;
+    box-shadow: 0 25px 70px rgba(50, 65, 52, 0.12);
+}
+
+.doctor-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+.photo-placeholder {
+    position: absolute;
+    inset: 0;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--green-dark);
+    gap: 15px;
+}
+
+.photo-placeholder span {
+    font-size: 65px;
+}
+
+.photo-placeholder p {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+}
+
+.photo-caption {
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    width: 100%;
+    padding: 45px 20px 22px;
+    color: white;
+    background: linear-gradient(transparent, rgba(35, 48, 39, 0.85));
+    text-align: center;
+}
+
+.photo-caption span {
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.photo-caption h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 21px;
+    margin-top: 7px;
+}
+
+.decoration {
+    position: absolute;
+    color: var(--green);
+}
+
+.decoration-one {
+    font-size: 35px;
+    top: 30px;
+    right: 35px;
+}
+
+.decoration-two {
+    font-size: 25px;
+    bottom: 40px;
+    left: 20px;
+}
+
+
+/* =====================================
+   SOBRE A PSICÓLOGA
+===================================== */
+
+.about-section {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: center;
+}
+
+.about-content h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--green-dark);
+    font-size: 43px;
+    line-height: 1.3;
+    font-weight: 400;
+    margin-top: 20px;
+}
+
+.about-text p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 20px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--green);
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px solid var(--green);
+    padding-bottom: 5px;
+}
+
+
+/* =====================================
+   MODALIDADES DE ATENDIMENTO
+===================================== */
+
+.services-section {
+    padding: 100px 0;
+    background: var(--cream);
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--green-dark);
+    font-size: 42px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.section-heading p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(50, 65, 52, 0.07);
+}
+
+.service-icon {
+    font-size: 35px;
+    color: var(--green);
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: var(--green-dark);
+    font-weight: 400;
+    margin: 25px 0 15px;
+}
+
+.service-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.service-card a {
+    display: inline-block;
+    margin-top: 25px;
+    color: var(--green);
+    text-decoration: none;
+    font-size: 12px;
+}
+
+
+/* =====================================
+   AGENDAMENTO
+===================================== */
+
+.booking-section {
+    padding: 100px 0;
+    background: #edf0e9;
+}
+
+.booking-container {
+    max-width: 850px;
+}
+
+.booking-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.booking-heading h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--green-dark);
+    font-size: 42px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.booking-heading p {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.booking-card {
+    background: white;
+    padding: 45px;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(50, 65, 52, 0.06);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green-dark);
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 52px;
+    padding: 0 15px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: #fdfdfb;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--green);
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.time-option {
+    min-height: 45px;
+    padding: 13px 8px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    background: white;
+    color: var(--green-dark);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    transition: 0.2s;
+}
+
+.time-option:hover:not(:disabled) {
+    border-color: var(--green);
+    background: var(--sage);
+}
+
+.time-option.selected {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+    box-shadow: 0 0 0 2px var(--sage);
+}
+
+.time-option:disabled {
+    background: #eeeeeb;
+    color: #a3a59f;
+    cursor: not-allowed;
+    text-decoration: line-through;
+    opacity: 0.65;
+}
+
+.time-message {
+    font-size: 13px;
+    color: var(--muted);
+    grid-column: 1 / -1;
+}
+
+.form-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 35px 0;
+}
+
+.booking-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    color: var(--green-dark);
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.privacy-notice {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.7;
+    margin: 20px 0;
+}
+
+.booking-submit {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    background: var(--green);
+    color: white;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.booking-submit:hover {
+    background: var(--green-dark);
+}
+
+.booking-submit:active {
+    transform: scale(0.99);
+}
+
+#booking-feedback {
+    margin-top: 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+}
+
+#booking-feedback.success {
+    color: var(--green-dark);
+}
+
+#booking-feedback.error {
+    color: #a33d3d;
+}
+
+
+/* =====================================
+   RODAPÉ
+===================================== */
+
+.footer {
+    padding: 45px 0;
+    text-align: center;
+    background: var(--green-dark);
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+
+.footer p {
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+.footer-divider {
+    width: 100%;
+    height: 1px;
+    background: rgba(255,255,255,0.15);
+    margin: 25px 0;
+}
+
+.footer .copyright {
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+
+/* =====================================
+   RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 800px) {
+
+    .header {
+        height: 75px;
+    }
+
+    .logo-name {
+        font-size: 19px;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        background: var(--cream);
+        flex-direction: column;
+        padding: 25px;
+        gap: 25px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navigation.active {
+        display: flex;
+    }
+
+    .header-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: var(--green-dark);
+        font-size: 26px;
+        cursor: pointer;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding-top: 70px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-content h2 {
+        font-size: 35px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-visual {
+        min-height: 420px;
+    }
+
+    .doctor-photo-card {
+        width: 280px;
+        height: 370px;
+    }
+
+    .visual-circle {
+        width: 310px;
+        height: 310px;
+    }
+
+    .booking-section {
+        padding: 70px 0;
+    }
+
+    .booking-heading h2,
+    .section-heading h2 {
+        font-size: 33px;
+    }
+
+    .booking-card {
+        padding: 25px 18px;
+    }
+
+    .time-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .time-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .service-card {
+        padding: 25px;
+    }
+
+}
